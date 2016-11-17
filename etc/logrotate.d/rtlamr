@@ -1,0 +1,20 @@
+/var/log/rtlamr.log
+/var/log/rtlamr.csv
+{
+	rotate 30
+	daily	
+	missingok
+	notifempty
+	nocompress
+	copytruncate
+}
+
+/var/log/rtlamr.err
+{
+        rotate 7
+        weekly
+        missingok
+        notifempty
+        delaycompress
+        compress
+}

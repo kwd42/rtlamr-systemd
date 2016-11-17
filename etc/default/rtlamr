@@ -1,0 +1,94 @@
+# Defaults for rtlamr systemd
+# referenced by /etc/systemd/system/rtlamr via EnvironmentFile option
+# overridden by rtlamr command line options added to the above systemd script
+
+
+# Description: The file where generated output is printed. Can be a device or file (not appended).
+# Equivalent option: -logfile
+# Valid value: Valid path
+# Default: /dev/stdout
+#RTLAMR_LOGFILE=/dev/stdout
+#RTLAMR_LOGFILE=/var/log/rtlamr.csv
+
+# Description: Raw signal logging file
+# Equivalent option: -logfile
+# Valid value: Valid path
+# Default: /dev/null
+#RTLAMR_SAMPLEFILE=/dev/null
+
+# Description: Indicates the message type to receive.
+# Equivalent option: -msgtype
+# Valid value: scm, scm+, idm, r900, r900bcd
+# Default: scm
+#RTLAMR_MSGTYPE=scm
+
+# Description: Defines the symbol length in number of samples.
+# Equivalent option: -symbollength
+# Valid value: Integer
+# Default: 72
+#RTLAMR_SYMBOLLENGTH=72
+
+# Description: Report on every Nth message to the log file.
+# Equivalent option: -decimation
+# Valid value: Integer
+# Default: 1
+#RTLAMR_DECIMATION=1
+
+# Description: 
+# Equivalent option: -duration
+# Valid value: Duration value understood by GO's time package (e.g. 5432s, 1h30m11s)
+# Default: 0 (infinite)
+#RTLAMR_DURATION=0
+
+# Description: When set, only report messages matching the ID(s) to the log file
+# Equivalent option: -filterid
+# Valid value: Positive integer separated by commas
+# Default: (no filter)
+#RTLAMR_FILTERID=
+
+# Description: When set, only report messages matching the type(s) to the log file
+# Equivalent option: -filtertype
+# Valid value: Positive integer separated by commas
+# Default: (no filter)
+#RTLAMR_FILTERTYPE=
+
+# Description: Format in which to write message information to the log file.
+# Equivalent option: -format
+# Valid value: plain, csv, json, xml, gob
+# Default: plain
+#RTLAMR_FORMAT=plain
+RTLAMR_FORMAT=csv
+
+# Description: Allow gob output to log file when enabled.
+# Equivalent option: -gobunsafe
+# Valid value: 1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False
+# Default: flase
+#RTLAMR_GOBUNSAFE=false
+
+# Description: Does not print state information at startup when enabled.
+# Equivalent option: -quiet
+# Valid value: 1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False
+# Default: false
+#RTLAMR_QUIET=false
+RTLAMR_QUIET=true
+
+# Description: Duplicate message from each meter are not reported when enabled.
+# Equivalent option: -unique
+# Valid value: 1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False
+# Default: false
+#RTLAMR_UNIQUE=false
+
+# Description: When used in conjunction with specified filter ID(s), will only run until
+#              one packet associated with each ID is reported.
+# Equivalent option: -single
+# Valid value: 1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False
+# Default: false
+#RTLAMR_SINGLE=false
+
+# Description: Displays build date and commit hash (and exists) when enabled.
+#              Not sure why you would ever enable this here.
+# Equivalent option: -version
+# Valid value: 1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False
+# Default: false
+#RTLAMR_VERSION=false
+

@@ -1,0 +1,17 @@
+[Unit]
+Description=RTL TCP Server
+Documentation=http://sdr.osmocom.org/trac/wiki/rtl-sdr
+Before=rtlamr.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/rtl_tcp
+Restart=always
+RestartSec=5
+TimeoutStartSec=10
+TimeoutStopSec=10
+
+[Install]
+Alias=rtl_tcp.service
+WantedBy=graphical.target
+RequiredBy=rltamr.service

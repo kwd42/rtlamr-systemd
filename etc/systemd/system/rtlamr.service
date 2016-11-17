@@ -1,0 +1,18 @@
+[Unit]
+Description=RTLAMR Service
+Documentation=https://github.com/bemasher/rtlamr
+Requires=rtltcp.service
+After=rtltcp.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/rtlamr
+ExecStart=/bin/sh -c "/usr/local/bin/rtlamr >> /var/log/rtlamr.log 2>> /var/log/rtlamr.err"
+Restart=always
+RestartSec=3
+TimeoutStartSec=5
+TimeoutStopSec=5
+
+[Install]
+WantedBy=graphical.target
+WantedBy=rtltcp.service
