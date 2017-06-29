@@ -7,6 +7,7 @@ After=rtltcp.service
 [Service]
 Type=simple
 EnvironmentFile=/etc/default/rtlamr
+ExecStartPre=/bin/sleep 3
 ExecStart=/bin/sh -c "/usr/local/bin/rtlamr >> /var/log/rtlamr.log 2>> /var/log/rtlamr.err"
 Restart=always
 RestartSec=3
